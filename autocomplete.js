@@ -1,18 +1,17 @@
-const createAutoComplete = (config) => {
-    const root = document.querySelector('.autocomplete');
-root.innerHTML = `
-    <label><b>Search For a Movie</b></label>
-    <input class="input" />
-    <div class="dropdown">
-        <div class="dropdown-menu">
-            <div class="dropdown-content results"></div>
+const createAutoComplete = ({ root }) => {
+    root.innerHTML = `
+        <label><b>Search For a Movie</b></label>
+        <input class="input" />
+        <div class="dropdown">
+            <div class="dropdown-menu">
+                <div class="dropdown-content results"></div>
+            </div>
         </div>
-    </div>
-`;
+    `;
 
-const input = document.querySelector('input');
-const dropdown = document.querySelector('.dropdown');
-const resultsWrapper = document.querySelector('.results');
+const input = root.querySelector('input');
+const dropdown = root.querySelector('.dropdown');
+const resultsWrapper = root.querySelector('.results');
 
 const onInput = async event => {
    const movies = await fetchData(event.target.value); 
