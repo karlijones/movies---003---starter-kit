@@ -21,6 +21,9 @@ createAutoComplete({
             <img src="${imgSrc}" />
             ${movie.Title}
         `;
+    },
+    onOptionSelect(movie) {
+        onMovieSelect(movie);
     }
 });
 
